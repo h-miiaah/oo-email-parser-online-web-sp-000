@@ -10,6 +10,7 @@ class EmailParser
     @email = emails
   end
 
+# parse method uses the @email variable to split the emails with "," or " " using a regex expression and return the unique values, then rejects any empty value, finally returning the array of unique emails.
   def parse
     email_array = @email.split(/[, ]/).uniq
     email_array.reject!{|element| element.empty?}
